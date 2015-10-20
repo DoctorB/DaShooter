@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="15" tilewidth="32" tileheight="32" nextobjectid="66">
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32" tilecount="480">
   <image source="../../images/tileset.png" width="960" height="540"/>
+ </tileset>
+ <tileset firstgid="481" name="tileset_block" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="../../images/tileset_block.png" width="32" height="32"/>
  </tileset>
  <layer name="scenario" width="100" height="15">
   <properties>
@@ -11,4 +14,69 @@
    eJzt2MdOw0AUhWG/ceBBEpYBkpBOGpBeSaOkEdJ4Iv6lVxlLnvG1pTnSt/P43JV1x0nHce7xgEekkEYGT8gihzwKKKKEMp5RQRU11NHAC17xhiZaaKODLnpIRqBXYsY+BhhihDEmeMcUM8yxwBIf+MQXvrHCGhtsscMP9vjFAUeccMYFfxHplZjxWmK4wa3iOb9ndESqVxWdc8WRwJ3hMzoi1auKzrnc3zuTZ3REqleVsM5lY2NjY2NjE0xUu7LXXdrEXSCs9wt3dM+o2pW97tIm7gJhvV+4o3tG1a7sdZc2sXNHYY/XMaPEPz2JzqB6/L5H4p+eRGdQPX7f8w9FvEda
   </data>
  </layer>
+ <objectgroup name="enemy">
+  <properties>
+   <property name="health" value="50"/>
+  </properties>
+ </objectgroup>
+ <objectgroup name="block">
+  <properties>
+   <property name="health" value="50"/>
+  </properties>
+  <object id="34" x="528" y="144">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="52" x="528" y="144">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="55" x="528" y="144">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="56" x="528" y="144">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="58" x="528" y="176">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="59" x="528" y="208">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="60" x="528" y="240">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="61" x="528" y="272">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="62" x="528" y="304">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="63" x="528" y="336">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="64" x="512" y="384" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

@@ -15,7 +15,8 @@ class Block extends FlxSprite
     {
         super(X,Y);
         health = Health;
-        loadGraphic(Reg.ENEMY, true, 42, 52, true, "block");
+        loadGraphic(Reg.BLOCK, true, 32, 32, true, "block");
+		trace("Block::new");
     }
 
     override public function update():Void

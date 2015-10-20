@@ -12,6 +12,7 @@ class Reg
 	public static inline var PLAYER:String = "assets/images/sprite/player.png";
 	public static inline var BULLET:String = "assets/images/sprite/bullet.png";
 	public static inline var ENEMY:String = "assets/images/sprite/enemy.png";
+	public static inline var BLOCK:String = "assets/images/tileset_block.png";
 	public static inline var PATH_TILESHEETS:String = "assets/images/";
 
 	/**

@@ -499,7 +499,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "13",
+			build: "23",
 			company: "HaxeFlixel",
 			file: "DaShooter",
 			fps: 60,

@@ -52,6 +52,9 @@ class MenuState extends FlxState
 		player = new Player(100,100,playerBullets);
 		add(player);
 
+		//loads stage objects
+		stage.loadObjects(this);
+
 		super.create();
 	}
 	

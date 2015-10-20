@@ -95,6 +95,7 @@ class TiledStage extends TiledMap
 	
 	public function loadObjects(state:MenuState)
 	{
+     	trace("TiledStage::loadObjects()");
 		for (group in objectGroups)
 		{
 			for (o in group.objects)

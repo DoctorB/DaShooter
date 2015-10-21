@@ -114,6 +114,7 @@ class MenuState extends FlxState
 			}			
 		}
 
+		
 		//collides bullets with blocks
 		FlxG.overlap(playerBullets,blocks,null,overlapped);
 

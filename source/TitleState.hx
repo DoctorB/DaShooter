@@ -30,6 +30,7 @@ class TitleState extends FlxState
 	{
 		super.create();
 
+		FlxG.mouse.visible = false;
 		spacePressed = false;
 
 		//star emmiter
@@ -75,7 +76,6 @@ class TitleState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
         _gamePad = FlxG.gamepads.lastActive;
-
 		super.update(elapsed);
 		if (FlxG.keys.justPressed.SPACE && !spacePressed){
 			spacePressed = true;

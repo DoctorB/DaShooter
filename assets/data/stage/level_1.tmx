@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="15" tilewidth="32" tileheight="32" nextobjectid="323">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="15" tilewidth="32" tileheight="32" nextobjectid="413">
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32" tilecount="480">
   <image source="../../images/tileset.png" width="960" height="540"/>
  </tileset>
@@ -28,16 +28,6 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="56" x="512" y="192" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="58" x="512" y="224" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="59" x="512" y="256" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
@@ -48,57 +38,7 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="61" x="512" y="320" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="62" x="512" y="352" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="63" x="512" y="384" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="64" x="512" y="415" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="66" x="512" y="416" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="71" x="544" y="288" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="68" x="544" y="192" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="74" x="544" y="416" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="73" x="544" y="352" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="69" x="544" y="224" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="75" x="544" y="384" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
@@ -113,27 +53,7 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="72" x="544" y="320" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="88" x="896" y="288" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="83" x="896" y="160" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="92" x="896" y="352" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="82" x="864" y="256" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
@@ -143,62 +63,12 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="93" x="896" y="256" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="87" x="864" y="416" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="76" x="864" y="352" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="89" x="864" y="415" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="77" x="896" y="320" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="78" x="896" y="416" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="80" x="896" y="192" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="84" x="864" y="288" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="91" x="864" y="224" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="86" x="896" y="384" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="81" x="864" y="320" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="90" x="864" y="384" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
@@ -213,22 +83,7 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="190" x="992" y="288" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="191" x="992" y="160" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="192" x="992" y="352" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="193" x="960" y="256" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
@@ -238,62 +93,12 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="195" x="992" y="256" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="196" x="960" y="416" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="197" x="960" y="352" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="198" x="960" y="415" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="199" x="992" y="320" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="200" x="992" y="416" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="201" x="992" y="192" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="202" x="960" y="288" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="203" x="960" y="224" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="204" x="992" y="384" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="205" x="960" y="320" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="206" x="960" y="384" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
@@ -308,22 +113,7 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="209" x="1088" y="288" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="210" x="1088" y="160" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="211" x="1088" y="352" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="212" x="1056" y="256" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
@@ -333,62 +123,12 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="214" x="1088" y="256" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="215" x="1056" y="416" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="216" x="1056" y="352" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="217" x="1056" y="415" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="218" x="1088" y="320" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="219" x="1088" y="416" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="220" x="1088" y="192" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="221" x="1056" y="288" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="222" x="1056" y="224" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="223" x="1088" y="384" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="224" x="1056" y="320" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="225" x="1056" y="384" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
@@ -403,32 +143,12 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="285" x="1248" y="320" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="286" x="1216" y="415" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="287" x="1216" y="256" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="288" x="1120" y="160" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
   </object>
   <object id="289" x="1216" y="160" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="290" x="1248" y="288" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
@@ -448,32 +168,7 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="294" x="1120" y="352" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="295" x="1152" y="224" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="296" x="1248" y="384" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="297" x="1120" y="415" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="298" x="1152" y="416" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="299" x="1248" y="352" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
@@ -483,42 +178,7 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="301" x="1248" y="256" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="302" x="1152" y="384" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="303" x="1120" y="320" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="304" x="1248" y="160" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="305" x="1120" y="384" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="306" x="1152" y="352" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="307" x="1120" y="416" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="308" x="1216" y="416" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
@@ -533,42 +193,7 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="311" x="1120" y="256" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="312" x="1152" y="256" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="313" x="1152" y="320" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="314" x="1216" y="320" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
   <object id="315" x="1152" y="192" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="316" x="1216" y="352" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="317" x="1216" y="384" width="32" height="32">
-   <properties>
-    <property name="health" value="50"/>
-   </properties>
-  </object>
-  <object id="318" x="1120" y="288" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
@@ -578,17 +203,452 @@
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="320" x="1248" y="416" width="32" height="32">
+  <object id="323" x="1536" y="224" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="321" x="1152" y="288" width="32" height="32">
+  <object id="324" x="1856" y="288" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>
   </object>
-  <object id="322" x="1216" y="288" width="32" height="32">
+  <object id="325" x="1792" y="288" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="326" x="1600" y="288" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="327" x="1792" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="328" x="1728" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="329" x="1632" y="288" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="330" x="1536" y="288" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="331" x="1696" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="332" x="1856" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="333" x="1696" y="288" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="334" x="1856" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="335" x="1760" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="336" x="1728" y="288" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="337" x="1760" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="338" x="1536" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="339" x="1632" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="340" x="1888" y="288" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="341" x="1696" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="342" x="1504" y="288" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="343" x="1632" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="344" x="1600" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="345" x="1888" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="346" x="1600" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="347" x="1792" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="348" x="1728" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="349" x="1888" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="350" x="1760" y="288" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="351" x="1504" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="352" x="1504" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="353" x="2144" y="128" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="354" x="2464" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="355" x="2400" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="356" x="2208" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="357" x="2400" y="160" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="358" x="2336" y="128" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="359" x="2240" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="360" x="2144" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="361" x="2304" y="128" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="362" x="2464" y="160" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="363" x="2304" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="364" x="2464" y="128" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="365" x="2368" y="160" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="366" x="2336" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="367" x="2368" y="128" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="368" x="2144" y="160" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="369" x="2240" y="128" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="370" x="2496" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="371" x="2304" y="160" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="372" x="2112" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="373" x="2240" y="160" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="374" x="2208" y="160" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="375" x="2496" y="128" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="376" x="2208" y="128" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="377" x="2400" y="128" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="378" x="2336" y="160" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="379" x="2496" y="160" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="380" x="2368" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="381" x="2112" y="160" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="382" x="2112" y="128" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="383" x="2752" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="384" x="3072" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="385" x="3008" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="386" x="2816" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="387" x="3008" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="388" x="2944" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="389" x="2848" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="390" x="2752" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="391" x="2912" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="392" x="3072" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="393" x="2912" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="394" x="3072" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="395" x="2976" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="396" x="2944" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="397" x="2976" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="398" x="2752" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="399" x="2848" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="400" x="3104" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="401" x="2912" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="402" x="2720" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="403" x="2848" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="404" x="2816" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="405" x="3104" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="406" x="2816" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="407" x="3008" y="192" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="408" x="2944" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="409" x="3104" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="410" x="2976" y="256" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="411" x="2720" y="224" width="32" height="32">
+   <properties>
+    <property name="health" value="50"/>
+   </properties>
+  </object>
+  <object id="412" x="2720" y="192" width="32" height="32">
    <properties>
     <property name="health" value="50"/>
    </properties>

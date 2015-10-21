@@ -66,7 +66,7 @@ class Player extends FlxSprite
 
 
     private function attack():Void{
-        var newBullet = new Bullet(x + 38, y + 23, 500, FlxObject.RIGHT, 10);
+        var newBullet = new Bullet(x + 38, y + 23, 500, FlxObject.RIGHT, 25);
         bulletArray.add(newBullet);
     }
 

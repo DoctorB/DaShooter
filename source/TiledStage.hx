@@ -7,13 +7,16 @@ import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup;
-import flixel.group.FlxTypedGroup;
+import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.tile.FlxTilemap;
-import flixel.util.FlxPoint;
+import flixel.math.FlxPoint;
+import flixel.addons.editors.tiled.TiledImageLayer;
 import flixel.addons.editors.tiled.TiledMap;
 import flixel.addons.editors.tiled.TiledObject;
-import flixel.addons.editors.tiled.TiledObjectGroup;
+import flixel.addons.editors.tiled.TiledObjectLayer;
 import flixel.addons.editors.tiled.TiledTileSet;
+import flixel.addons.editors.tiled.TiledLayer;
+import flixel.addons.editors.tiled.TiledTileLayer;
 
 class TiledStage extends TiledMap
 {
@@ -26,9 +29,7 @@ class TiledStage extends TiledMap
 	public var backgroundTiles:FlxGroup;
 	public var scenarioTiles:FlxGroup;
 
-
 	//object groups
-
 	private var collidableTileLayers:Array<FlxTilemap>;
 	
 	public function new(tiledLevel:Dynamic)
@@ -39,12 +40,18 @@ class TiledStage extends TiledMap
 		backgroundTiles = new FlxGroup();
 		scenarioTiles = new FlxGroup();
 		
-		FlxG.camera.setBounds(0, 0, fullWidth, fullHeight, true);
+		//FlxG.camera.setBounds(0, 0, fullWidth, fullHeight, true);
+		FlxG.camera.setScrollBoundsRect(0, 0, fullWidth, fullHeight, true);
 	
 		// Load Tile Maps
-		for (tileLayer in layers)
+		for (layer in layers)
 		{
+			trace("layer.type: " + layer.type);
+			if (layer.type != TiledLayerType.TILE) continue;
+			var tileLayer:TiledTileLayer = cast layer;
+
 			var tileSheetName:String = tileLayer.properties.get("tileset");
+			trace("tileSheetName: " + tileSheetName);
 			
 			if (tileSheetName == null)
 				throw "'tileset' property not defined for the '" + tileLayer.name + "' layer. Please add the property to the layer.";
@@ -65,13 +72,25 @@ class TiledStage extends TiledMap
 			var imagePath 		= new Path(tileSet.imageSource);
 			var processedPath 	= Reg.PATH_TILESHEETS + imagePath.file + "." + imagePath.ext;
 			
-			trace("processedPath: " + processedPath);
-
 			var tilemap:FlxTilemap = new FlxTilemap();
+			
+			/*
 			tilemap.widthInTiles = width;
 			tilemap.heightInTiles = height;
 			tilemap.loadMap(tileLayer.tileArray, processedPath, tileSet.tileWidth, tileSet.tileHeight, 0, tileSet.firstGID, 1, 1);
-			
+			*/
+
+			tilemap.loadMapFromArray(tileLayer.tileArray, width, height, processedPath, tileSet.tileWidth, tileSet.tileHeight, OFF, tileSet.firstGID, 1, 1);
+
+			trace("tileLayer.tileArray: " + tileLayer.tileArray);
+			trace("width: " + width);
+			trace("height: " + height);
+			trace("processedPath: " + processedPath);
+			trace("tileSet.tileWidth: " + tileSet.tileWidth);
+			trace("tileSet.tileHeight: " + tileSet.tileHeight);
+			trace("tileSet.firstGID: " + tileSet.firstGID);
+			trace("tileLayer.name: " + tileLayer.name);
+
 			if (tileLayer.name == "bg"){
 
 				backgroundTiles.add(tilemap);	
@@ -96,17 +115,18 @@ class TiledStage extends TiledMap
 	
 	public function loadObjects(state:MenuState)
 	{
-     	trace("TiledStage::loadObjects()");
-		for (group in objectGroups)
-		{
-			for (o in group.objects)
+		for (layer in layers)
+		{	
+			if (layer.type != TiledLayerType.OBJECT) continue;
+			var objectLayer:TiledObjectLayer = cast layer;		
+			for (o in objectLayer.objects)
 			{
-				loadObject(o, group, state);
+				loadObject(o, objectLayer, state);
 			}
 		}
 	}
 	
-	private function loadObject(o:TiledObject, g:TiledObjectGroup, state:MenuState)
+	private function loadObject(o:TiledObject, g:TiledObjectLayer, state:MenuState)
 	{
 		var x:Int = o.x;	
 		var y:Int = o.y;
@@ -115,13 +135,15 @@ class TiledStage extends TiledMap
 		if (o.gid != -1)
 			y -= g.map.getGidOwner(o.gid).tileHeight;
 		
+		trace(o.type.toLowerCase());
+
 		switch (o.type.toLowerCase())
 		{				
 			case "enemy":
 
 				var health:Float = 10;
-				if (o.custom != null){
-					health= Std.parseFloat(o.custom.get("health"));
+				if (o.properties != null){
+					health= Std.parseFloat(o.properties.get("health"));
 				}
 				 var enemy = new Enemy(x,y,health);
 				 if (state.enemies == null){
@@ -132,8 +154,8 @@ class TiledStage extends TiledMap
 
 			case "block":
 				var health:Float = 10;
-				if (o.custom != null){
-					health= Std.parseFloat(o.custom.get("health"));
+				if (o.properties != null){
+					health= Std.parseFloat(o.properties.get("health"));
 				}
 				var block = new Block(x,y,health);
 				if (state.blocks == null){

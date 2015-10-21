@@ -3,9 +3,9 @@ package;
 import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.FlxObject;
-import flixel.util.FlxVelocity;
-import flixel.util.FlxAngle;
-import flixel.util.FlxPoint;
+import flixel.math.FlxVelocity;
+import flixel.math.FlxAngle;
+import flixel.math.FlxPoint;
 
 class Block extends FlxSprite
 {
@@ -20,9 +20,9 @@ class Block extends FlxSprite
         animation.play("blink");
     }
 
-    override public function update():Void
+    override public function update(elapsed:Float):Void
     {
-        super.update();    
+        super.update(elapsed);    
     }
 
     override public function destroy():Void

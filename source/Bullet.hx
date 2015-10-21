@@ -3,9 +3,9 @@ package;
 import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.FlxObject;
-import flixel.util.FlxVelocity;
-import flixel.util.FlxAngle;
-import flixel.util.FlxPoint;
+import flixel.math.FlxVelocity;
+import flixel.math.FlxAngle;
+import flixel.math.FlxPoint;
 
 class Bullet extends FlxSprite
 {
@@ -23,9 +23,8 @@ class Bullet extends FlxSprite
         loadGraphic(Reg.BULLET, true, 19, 5, true, "bullet");
     }
 
-    override public function update():Void
+    override public function update(elapsed:Float):Void
     {
-        super.update();
         if (direction == FlxObject.LEFT){
             velocity.x = -speed;     
         }
@@ -38,7 +37,7 @@ class Bullet extends FlxSprite
         if (direction == FlxObject.CEILING){
             velocity.y = -speed;     
         }
-        
+        super.update(elapsed);        
     }
 
     override public function destroy():Void

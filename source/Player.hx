@@ -3,10 +3,10 @@ package;
 import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.FlxObject;
-import flixel.util.FlxVelocity;
-import flixel.util.FlxAngle;
-import flixel.util.FlxPoint;
-import flixel.group.FlxTypedGroup;
+import flixel.math.FlxVelocity;
+import flixel.math.FlxAngle;
+import flixel.math.FlxPoint;
+import flixel.group.FlxGroup.FlxTypedGroup;
 
 class Player extends FlxSprite
 {
@@ -24,7 +24,7 @@ class Player extends FlxSprite
         bulletArray = playerBulletArray;
     }
 
-    override public function update():Void
+    override public function update(elapsed:Float):Void
     {
 
         velocity.x = 0;
@@ -56,7 +56,7 @@ class Player extends FlxSprite
                 attack();
             }
         }
-        super.update();
+        super.update(elapsed);
     }
 
     override public function destroy():Void

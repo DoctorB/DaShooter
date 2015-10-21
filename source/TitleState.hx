@@ -11,6 +11,7 @@ import flixel.effects.FlxFlicker;
 import flixel.effects.particles.FlxEmitter;
 import flixel.effects.particles.FlxParticle;
 import flixel.util.FlxColor;
+import flixel.input.gamepad.FlxGamepad;
 
 class TitleState extends FlxState
 {
@@ -19,6 +20,8 @@ class TitleState extends FlxState
 	private var _whitePixel:FlxParticle;
 	private var text:FlxText;
 	private var spacePressed:Bool;
+
+    private var _gamePad:FlxGamepad;
 
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -48,7 +51,7 @@ class TitleState extends FlxState
 			_emitter.add(_whitePixel);
 		}
 
-		_emitter.start(false, .01, 10);
+		_emitter.start(false, 0.1, 10);
 
 		var title = new FlxSprite(10,90);
 		title.loadGraphic(Reg.TITLE_LOGO,true,616,131);
@@ -71,12 +74,19 @@ class TitleState extends FlxState
 
 	override public function update(elapsed:Float):Void
 	{
+        _gamePad = FlxG.gamepads.lastActive;
+
 		super.update(elapsed);
 		if (FlxG.keys.justPressed.SPACE && !spacePressed){
 			spacePressed = true;
 			FlxFlicker.stopFlickering(text);
 			FlxG.switchState(new MenuState());
 			//FlxG.sound.play(Reg.MUSIC_START,musicFinishedPlaying);
+		}
+		if (_gamePad != null && _gamePad.pressed.X) {
+			spacePressed = true;
+			FlxFlicker.stopFlickering(text);
+			FlxG.switchState(new MenuState());			
 		}
 	}	
 

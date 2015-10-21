@@ -2,6 +2,7 @@ package;
 
 import flixel.FlxSprite;
 import flixel.system.FlxSound;
+import flixel.input.gamepad.FlxGamepad;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.math.FlxVelocity;
@@ -16,6 +17,8 @@ class Player extends FlxSprite
     private var bulletArray:FlxTypedGroup<Bullet>;
     private var sndFire:FlxSound;
 
+    private var _gamePad:FlxGamepad;
+
     public function new(X:Float, Y:Float,playerBulletArray:FlxTypedGroup<Bullet>)
     {
         super(X,Y);
@@ -29,10 +32,17 @@ class Player extends FlxSprite
     override public function update(elapsed:Float):Void
     {
 
+        _gamePad = FlxG.gamepads.lastActive;
+
         velocity.x = 0;
         velocity.y = 0;
-
         if (alive) {
+
+            if (_gamePad != null)
+            {
+                gamepadControls();
+            }                
+
             //Input
             if (FlxG.keys.pressed.LEFT)
             {
@@ -59,6 +69,26 @@ class Player extends FlxSprite
             }
         }
         super.update(elapsed);
+    }
+
+
+    private function gamepadControls():Void
+    {
+        if (_gamePad.pressed.X) {
+            attack();
+        }
+        if (_gamePad.pressed.DPAD_LEFT) {
+            moveLeft();
+        }
+        if (_gamePad.pressed.DPAD_RIGHT) {
+            moveRight();
+        }
+        if (_gamePad.pressed.DPAD_UP) {
+            moveUp();
+        }
+        if (_gamePad.pressed.DPAD_DOWN) {
+            moveDown();
+        }
     }
 
     override public function destroy():Void

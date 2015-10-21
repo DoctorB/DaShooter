@@ -245,5 +245,6 @@ private function getExplosion(x:Float, y:Float):FlxSprite {
 	private function GameOver():Void{
 		trace("game over");
 		scroll = false;
+		FlxG.switchState(new TitleState());
 	}
 }

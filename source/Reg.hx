@@ -15,6 +15,7 @@ class Reg
 	public static inline var EXPLOSION:String = "assets/images/sprite/explosion.png";
 	public static inline var BLOCK:String = "assets/images/tileset_block.png";
 	public static inline var PATH_TILESHEETS:String = "assets/images/";
+	public static inline var TITLE_LOGO:String = "assets/images/logo.png";
 
 	public static inline var FIRE_SOUND:String = "assets/sounds/sfx_laser2.ogg";
 	public static inline var EXPLOSION_SOUND:String = "assets/sounds/explosion.wav";

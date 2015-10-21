@@ -46,12 +46,10 @@ class TiledStage extends TiledMap
 		// Load Tile Maps
 		for (layer in layers)
 		{
-			trace("layer.type: " + layer.type);
 			if (layer.type != TiledLayerType.TILE) continue;
 			var tileLayer:TiledTileLayer = cast layer;
 
 			var tileSheetName:String = tileLayer.properties.get("tileset");
-			trace("tileSheetName: " + tileSheetName);
 			
 			if (tileSheetName == null)
 				throw "'tileset' property not defined for the '" + tileLayer.name + "' layer. Please add the property to the layer.";
@@ -73,23 +71,7 @@ class TiledStage extends TiledMap
 			var processedPath 	= Reg.PATH_TILESHEETS + imagePath.file + "." + imagePath.ext;
 			
 			var tilemap:FlxTilemap = new FlxTilemap();
-			
-			/*
-			tilemap.widthInTiles = width;
-			tilemap.heightInTiles = height;
-			tilemap.loadMap(tileLayer.tileArray, processedPath, tileSet.tileWidth, tileSet.tileHeight, 0, tileSet.firstGID, 1, 1);
-			*/
-
 			tilemap.loadMapFromArray(tileLayer.tileArray, width, height, processedPath, tileSet.tileWidth, tileSet.tileHeight, OFF, tileSet.firstGID, 1, 1);
-
-			trace("tileLayer.tileArray: " + tileLayer.tileArray);
-			trace("width: " + width);
-			trace("height: " + height);
-			trace("processedPath: " + processedPath);
-			trace("tileSet.tileWidth: " + tileSet.tileWidth);
-			trace("tileSet.tileHeight: " + tileSet.tileHeight);
-			trace("tileSet.firstGID: " + tileSet.firstGID);
-			trace("tileLayer.name: " + tileLayer.name);
 
 			if (tileLayer.name == "bg"){
 
@@ -135,8 +117,6 @@ class TiledStage extends TiledMap
 		if (o.gid != -1)
 			y -= g.map.getGidOwner(o.gid).tileHeight;
 		
-		trace(o.type.toLowerCase());
-
 		switch (o.type.toLowerCase())
 		{				
 			case "enemy":

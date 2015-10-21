@@ -114,14 +114,8 @@ class MenuState extends FlxState
 			}			
 		}
 
-		//collides blocks with stage
-		// FlxG.overlap(stage.scenarioTiles,blocks,null,FlxObject.separate);
-
 		//collides bullets with blocks
 		FlxG.overlap(playerBullets,blocks,null,overlapped);
-
-		//collides blocks with blocks
-		//FlxG.overlap(blocks,blocks,null,FlxObject.separate);
 
 		//collides player with stage
 		FlxG.overlap(stage.scenarioTiles, player, null, FlxObject.separate);

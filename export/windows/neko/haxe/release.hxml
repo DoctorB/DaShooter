@@ -1,12 +1,12 @@
 -main ApplicationMain 
 -cp D:/HaxeToolkit/haxe/lib/flixel-addons/1,1,0
 -D flixel-addons=1.1.0
+-cp D:/HaxeToolkit/haxe/lib/openfl/3,3,9
+-D openfl=3.3.9
 -cp D:/HaxeToolkit/haxe/lib/flixel/3,3,11
 -D flixel=3.3.11
 -cp D:/HaxeToolkit/haxe/lib/lime/2,6,9
 -D lime=2.6.9
--cp D:/HaxeToolkit/haxe/lib/openfl/3,3,9
--D openfl=3.3.9
 -cp source
 -cp d:\HaxeToolkit\haxe\lib\lime/2,6,9/legacy
 -D openfl-legacy

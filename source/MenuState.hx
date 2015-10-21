@@ -7,6 +7,8 @@ import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
 import flixel.group.FlxTypedGroup;
+import flixel.util.FlxPoint;
+import flixel.FlxObject;
 
 /**
  * A FlxState which can be used for the game's menu.
@@ -28,6 +30,14 @@ class MenuState extends FlxState
 
 	//blocks
 	public var blocks:FlxTypedGroup<Block>;
+
+	//screen
+	public static var SCR_WIDTH = 640;
+	public static var SCR_HEIGHT = 480;
+	public var screenPositionX:Float = 0;
+	public var screenSpeed:Float = 1;
+	public var scroll:Bool = true;
+
 
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -55,6 +65,9 @@ class MenuState extends FlxState
 		//loads stage objects
 		stage.loadObjects(this);
 
+		FlxG.camera.scroll = new FlxPoint(0,0);
+		scroll = true;
+
 		super.create();
 	}
 	
@@ -73,5 +86,90 @@ class MenuState extends FlxState
 	override public function update():Void
 	{
 		super.update();
+		var newScroll = FlxG.camera.scroll;
+		if (scroll){
+			if (newScroll.x + SCR_WIDTH >= stage.fullWidth){
+				scroll = false;
+			}else{
+				newScroll.x += screenSpeed;
+				FlxG.camera.scroll = newScroll;
+				player.x += screenSpeed;
+			}			
+		}
+
+		//collides blocks with stage
+		FlxG.overlap(stage.scenarioTiles,blocks,null,FlxObject.separate);
+
+		//collides bullets with blocks
+		FlxG.overlap(playerBullets,blocks,null,overlapped);
+
+		//collides blocks with blocks
+		FlxG.overlap(blocks,blocks,null,FlxObject.separate);
+
+		//collides player with stage
+		FlxG.overlap(stage.scenarioTiles, player, null, FlxObject.separate);
+
+		//collides playerBullets with scenario
+		FlxG.collide(stage.scenarioTiles,playerBullets,null);
+
+		//collides playerBullets with enemies
+		FlxG.overlap(playerBullets,enemies,null,overlapped);
+
+		//player bullet update
+		for (pb in playerBullets){
+			//position
+			pb.x += screenSpeed;
+
+			//destroyed?
+			if (pb.isTouching(FlxObject.ANY) || (pb.x > (newScroll.x + SCR_WIDTH))){
+				playerBullets.remove(pb);
+				pb.destroy();
+			}
+		}
+	}
+
+	private function overlapped(Sprite1:FlxObject, Sprite2:FlxObject):Bool
+	{
+		var sprite1ClassName:String = Type.getClassName(Type.getClass(Sprite1));
+		var sprite2ClassName:String = Type.getClassName(Type.getClass(Sprite2));
+
+		if (sprite1ClassName == "Bullet" && sprite2ClassName == "Enemy"){
+			var b: Dynamic = cast(Sprite1,Bullet);
+			var e: Dynamic = cast(Sprite2,Enemy);
+
+			//damages enemy
+			e.damage(b.damage);
+			if (e.isDead()){
+				trace("Enemy destroyed");
+				enemies.remove(e);
+				Sprite2.destroy();
+			}
+
+			//destroys bullet
+			playerBullets.remove(b);
+			Sprite1.destroy();
+
+			return true;
+		}
+
+		if (sprite1ClassName == "Bullet" && sprite2ClassName == "Block"){
+			var bullet: Dynamic = cast(Sprite1,Bullet);
+			var block: Dynamic = cast(Sprite2,Block);
+
+			//damages enemy
+			block.damage(bullet.damage);
+			if (block.isDestroyed()){
+				blocks.remove(block);
+				block.destroy();
+			}
+
+			//destroys bullet
+			playerBullets.remove(bullet);
+			bullet.destroy();
+
+			return true;
+		}
+
+		return false;
 	}	
 }

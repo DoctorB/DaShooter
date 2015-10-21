@@ -26,6 +26,7 @@ class TiledStage extends TiledMap
 	public var backgroundTiles:FlxGroup;
 	public var scenarioTiles:FlxGroup;
 
+
 	//object groups
 
 	private var collidableTileLayers:Array<FlxTilemap>;
@@ -90,7 +91,7 @@ class TiledStage extends TiledMap
 				
 				collidableTileLayers.push(tilemap);
 			}
-		}
+		}		
 	}
 	
 	public function loadObjects(state:MenuState)

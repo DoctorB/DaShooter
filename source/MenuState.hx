@@ -31,6 +31,10 @@ class MenuState extends FlxState
 	//blocks
 	public var blocks:FlxTypedGroup<Block>;
 
+    // group that contains the explosions
+    private var explosionPool:FlxTypedGroup<FlxSprite>;
+
+
 	//screen
 	public static var SCR_WIDTH = 640;
 	public static var SCR_HEIGHT = 480;
@@ -61,6 +65,10 @@ class MenuState extends FlxState
 
 		player = new Player(100,100,playerBullets);
 		add(player);
+
+        // create a group which will contain the 
+        explosionPool = new FlxTypedGroup<FlxSprite>();
+        add(explosionPool);
 
 		//loads stage objects
 		stage.loadObjects(this);
@@ -98,13 +106,13 @@ class MenuState extends FlxState
 		}
 
 		//collides blocks with stage
-		FlxG.overlap(stage.scenarioTiles,blocks,null,FlxObject.separate);
+		// FlxG.overlap(stage.scenarioTiles,blocks,null,FlxObject.separate);
 
 		//collides bullets with blocks
 		FlxG.overlap(playerBullets,blocks,null,overlapped);
 
 		//collides blocks with blocks
-		FlxG.overlap(blocks,blocks,null,FlxObject.separate);
+		//FlxG.overlap(blocks,blocks,null,FlxObject.separate);
 
 		//collides player with stage
 		FlxG.overlap(stage.scenarioTiles, player, null, FlxObject.separate);
@@ -124,6 +132,24 @@ class MenuState extends FlxState
 			if (pb.isTouching(FlxObject.ANY) || (pb.x > (newScroll.x + SCR_WIDTH))){
 				playerBullets.remove(pb);
 				pb.destroy();
+			}
+		}
+
+		//player collision
+		if (player.alive){
+			FlxG.overlap(blocks,player,null,overlapped);
+			FlxG.overlap(enemies,player,null,overlapped);
+			if (player.isTouching(FlxObject.ANY)){
+				player.killPlayer();
+				this.getExplosion(player.x, player.y);
+				GameOver();
+			}
+		}
+
+		// if a explosion is alive and the animation is done, kill it!
+		for(explosion in explosionPool) {
+			if(explosion.alive && explosion.animation.finished) {
+				explosion.kill();
 			}
 		}
 	}
@@ -159,6 +185,7 @@ class MenuState extends FlxState
 			//damages enemy
 			block.damage(bullet.damage);
 			if (block.isDestroyed()){
+				this.getExplosion(block.x, block.y);
 				blocks.remove(block);
 				block.destroy();
 			}
@@ -170,6 +197,48 @@ class MenuState extends FlxState
 			return true;
 		}
 
+		if ((sprite1ClassName == "Enemy" || sprite1ClassName == "Block") && sprite2ClassName == "Player"){	
+			player.killPlayer();
+			this.getExplosion(player.x, player.y);
+			GameOver();
+			return true;
+		}
+
 		return false;
-	}	
+	}
+
+
+private function getExplosion(x:Float, y:Float):FlxSprite {
+		// get a dead explosion from the group
+		var explosion:FlxSprite = cast explosionPool.getFirstDead();
+		
+		// if there aren't any, create a new one
+		if(explosion == null) {
+			trace("explosion == null");
+			explosion = new FlxSprite();
+	        explosion.loadGraphic(Reg.EXPLOSION, true, 256, 256, true, "explosion");
+			explosion.animation.add("boom", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], 60, false);
+			explosionPool.add(explosion);
+		}
+		
+		// revive the explosion
+		explosion.revive();
+		
+		// set the explosions position to the given position
+		explosion.x = x - 128;
+		explosion.y = y - 128;
+		
+		// set rotation to a random value to add a little bit of variety
+		explosion.angle = Std.random(360);
+		
+		// play the animation
+		explosion.animation.play("boom");
+		
+		return explosion;
+	}
+
+	private function GameOver():Void{
+		trace("game over");
+		scroll = false;
+	}
 }

@@ -13,11 +13,14 @@ class Player extends FlxSprite
 
     private static var SPEED:Float = 250;
     private var bulletArray:FlxTypedGroup<Bullet>;
+    
 
     public function new(X:Float, Y:Float,playerBulletArray:FlxTypedGroup<Bullet>)
     {
         super(X,Y);
         loadGraphic(Reg.PLAYER, true, 38, 50, true, "player");
+        animation.add("fly", [0, 1, 2], 5, true);
+        animation.play("fly"); 
         bulletArray = playerBulletArray;
     }
 
@@ -27,31 +30,32 @@ class Player extends FlxSprite
         velocity.x = 0;
         velocity.y = 0;
 
-        //Input
-        if (FlxG.keys.pressed.LEFT)
-        {
-            moveLeft();
-        }
+        if (alive) {
+            //Input
+            if (FlxG.keys.pressed.LEFT)
+            {
+                moveLeft();
+            }
 
-        if (FlxG.keys.pressed.RIGHT)
-        {
-            moveRight();
-        }
+            if (FlxG.keys.pressed.RIGHT)
+            {
+                moveRight();
+            }
 
-        if (FlxG.keys.pressed.UP)
-        {
-            moveUp();
-        }
+            if (FlxG.keys.pressed.UP)
+            {
+                moveUp();
+            }
 
-        if (FlxG.keys.pressed.DOWN)
-        {
-            moveDown();
-        }
+            if (FlxG.keys.pressed.DOWN)
+            {
+                moveDown();
+            }
 
-        if (FlxG.keys.justPressed.A || FlxG.keys.justPressed.SPACE){
-            attack();
+            if (FlxG.keys.justPressed.A || FlxG.keys.justPressed.SPACE){
+                attack();
+            }
         }
-
         super.update();
     }
 
@@ -81,4 +85,10 @@ class Player extends FlxSprite
     private function moveDown():Void{
             velocity.y += SPEED;
     }
+
+    public function killPlayer():Void{
+        alive = false;
+        destroy();
+    }
 }
+

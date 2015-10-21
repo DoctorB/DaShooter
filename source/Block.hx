@@ -16,6 +16,8 @@ class Block extends FlxSprite
         super(X,Y);
         health = Health;
         loadGraphic(Reg.BLOCK, true, 32, 32, true, "block");
+        animation.add("blink", [0, 1], 5, true);
+        animation.play("blink");
     }
 
     override public function update():Void

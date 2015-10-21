@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxSprite;
+import flixel.system.FlxSound;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.math.FlxVelocity;
@@ -13,7 +14,7 @@ class Player extends FlxSprite
 
     private static var SPEED:Float = 250;
     private var bulletArray:FlxTypedGroup<Bullet>;
-    
+    private var sndFire:FlxSound;
 
     public function new(X:Float, Y:Float,playerBulletArray:FlxTypedGroup<Bullet>)
     {
@@ -22,6 +23,7 @@ class Player extends FlxSprite
         animation.add("fly", [0, 1, 2], 5, true);
         animation.play("fly"); 
         bulletArray = playerBulletArray;
+        sndFire = FlxG.sound.load(Reg.FIRE_SOUND);
     }
 
     override public function update(elapsed:Float):Void
@@ -61,13 +63,17 @@ class Player extends FlxSprite
 
     override public function destroy():Void
     {
+        if (sndFire != null) {
+            sndFire.destroy();   
+        }
+        sndFire = null;
         super.destroy();
     }
-
 
     private function attack():Void{
         var newBullet = new Bullet(x + 38, y + 23, 500, FlxObject.RIGHT, 25);
         bulletArray.add(newBullet);
+        sndFire.play(true);
     }
 
     private function moveRight():Void{

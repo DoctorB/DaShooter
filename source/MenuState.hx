@@ -9,6 +9,7 @@ import flixel.math.FlxMath;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxPoint;
 import flixel.FlxObject;
+import flixel.system.FlxSound;
 
 /**
  * A FlxState which can be used for the game's menu.
@@ -41,6 +42,8 @@ class MenuState extends FlxState
 	public var screenPositionX:Float = 0;
 	public var screenSpeed:Float = 1;
 	public var scroll:Bool = true;
+
+	private var sndExplosion:FlxSound;
 
 
 	/**
@@ -76,6 +79,8 @@ class MenuState extends FlxState
 		FlxG.camera.scroll = new FlxPoint(0,0);
 		scroll = true;
 
+		sndExplosion = FlxG.sound.load(Reg.EXPLOSION_SOUND);
+
 		super.create();
 	}
 	
@@ -85,6 +90,10 @@ class MenuState extends FlxState
 	 */
 	override public function destroy():Void
 	{
+        if (sndExplosion != null) {
+            sndExplosion.destroy();   
+        }
+        sndExplosion = null;
 		super.destroy();
 	}
 
@@ -231,6 +240,8 @@ private function getExplosion(x:Float, y:Float):FlxSprite {
 		// set rotation to a random value to add a little bit of variety
 		explosion.angle = Std.random(360);
 		
+        sndExplosion.play(true);
+
 		// play the animation
 		explosion.animation.play("boom");
 		

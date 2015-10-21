@@ -16,6 +16,9 @@ class Reg
 	public static inline var BLOCK:String = "assets/images/tileset_block.png";
 	public static inline var PATH_TILESHEETS:String = "assets/images/";
 
+	public static inline var FIRE_SOUND:String = "assets/sounds/sfx_laser2.ogg";
+	public static inline var EXPLOSION_SOUND:String = "assets/sounds/explosion.wav";
+
 	/**
 	 * Generic levels Array that can be used for cross-state stuff.
 	 * Example usage: Storing the levels of a platformer.
